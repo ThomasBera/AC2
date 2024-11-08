@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header text-center">
+          <h3>Bem-vindo à Tela Principal!</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-row mb-4">
+            <div class="col">
+              <input 
+                type="text" 
+                [(ngModel)]="filtroNome" 
+                class="form-control" 
+                placeholder="Filtrar por nome" 
+                aria-label="Filtrar por nome">
+            </div>
+            <div class="col-auto">
+              <button 
+                class="btn btn-primary btn-block" 
+                (click)="filtrarUsuarios()">Filtrar</button>
+            </div>
+          </div>
+
+          <ul class="list-group">
+            <li 
+              class="list-group-item d-flex justify-content-between align-items-center" 
+              *ngFor="let usuario of filtrarUsuarios()">
+              <span>{{ usuario.nome }} - {{ usuario.email }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
